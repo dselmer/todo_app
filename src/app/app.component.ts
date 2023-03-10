@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,6 +25,13 @@ export class AppComponent {
     }
     return this.allItems.filter(item => item.done === true ? item.done:!item.done)
   }
+  addItem(description: string) {
+    this.allItems.unshift({
+      description,
+      done: false
+    });
+  }
+  
 }
 
 
